@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araguaney Hair Care - Diagnostic Capillaire</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">    
+    <!-- Fichier CSS -->
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index1.html" class="logo">ARAGUANEY</a>
+            
+            <button class="menu-toggle" aria-label="Menu" id="menuToggle">
+                ☰
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index1.html" class="nav-link">ACCUEIL</a></li>
+                <li><a href="index1.html#collections" class="nav-link">COLLECTIONS</a></li>
+                <li><a href="#notre-maison.html" class="nav-link">NOTRE MAISON</a></li>
+                <li><a href="#consultation" class="nav-link">CONSULTATION</a></li>
+                <li><a href="diagnostic.html" class="nav-link active">DIAGNOSTIC</a></li>
+                <li><a href="#panier" class="nav-link">PANIER 🛒</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- HEADER -->
+        <div class="page-header">
+            <h1>Guide Cheveux Texturés</h1>
+            <p class="subtitle">3 questions pour trouver votre routine idéale</p>
+        </div>
+
+        <!-- BARRE DE PROGRESSION -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text" id="progressText">Question 1 sur 3</p>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="quiz-section" id="quiz">
+            
+            <!-- Question 1 -->
+            <div class="question">
+                <h3>
+                    <span class="question-number">1</span>
+                    Quel est votre type de cheveux ?
+                </h3>
+                <div class="options" id="q1">
+                    <div class="option" onclick="selectOption(this, 'type')" data-value="type3">
+                        <span class="option-icon">🌀</span>
+                        <div class="option-text">Type 3</div>
+                        <div class="option-desc">Bouclés/Frisés</div>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'type')" data-value="type4">
+                        <span class="option-icon">➰</span>
+                        <div class="option-text">Type 4</div>
+                        <div class="option-desc">Crépus</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <h3>
+                    <span class="question-number">2</span>
+                    Quelle est votre porosité ?
+                </h3>
+                <div class="options" id="q2">
+                    <div class="option" onclick="selectOption(this, 'porosity')" data-value="faible">
+                        <span class="option-icon">💧</span>
+                        <div class="option-text">Faible</div>
+                        <div class="option-desc">Produit reste en surface</div>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'porosity')" data-value="forte">
+                        <span class="option-icon">🧽</span>
+                        <div class="option-text">Forte</div>
+                        <div class="option-desc">Absorbe très vite</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <h3>
+                    <span class="question-number">3</span>
+                    Vos objectifs principaux ? <span style="font-size: 14px; color: var(--color-text-muted); font-weight: 400;">(plusieurs choix possibles)</span>
+                </h3>
+                <div class="options" id="q3">
+                    <div class="option" onclick="toggleOption(this)" data-value="hydratation">
+                        <span class="option-icon">🧴</span>
+                        <div class="option-text">Hydratation</div>
+                    </div>
+                    <div class="option" onclick="toggleOption(this)" data-value="definition">
+                        <span class="option-icon">✨</span>
+                        <div class="option-text">Définition</div>
+                    </div>
+                    <div class="option" onclick="toggleOption(this)" data-value="volume">
+                        <span class="option-icon">🦁</span>
+                        <div class="option-text">Volume</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn" id="submitBtn" onclick="showResults()" disabled>
+                Voir ma routine personnalisée
+            </button>
+        </div>
+        <!-- FIN QUIZ SECTION -->
+
+        <!-- RÉSULTATS -->
+        <div class="results" id="results">
+            <h2>🎉 Voici votre sélection</h2>
+            <p>Basée sur vos réponses, nous recommandons :</p>
+            
+            <div id="productList"></div>
+
+            <button class="btn restart-btn" onclick="location.reload()">Refaire le test</button>
+        </div>
+    </div>
+
+    <!-- Fichier JavaScript -->
+    <script src="script1.js"></script>
+
+</body>
+</html>
